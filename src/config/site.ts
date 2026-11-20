@@ -2,7 +2,7 @@
 export const site = {
   name: 'YourName',
   handle: '@your-username',
-  avatar: '/avatar.svg',
+  avatar: `${import.meta.env.BASE_URL}avatar.svg`,
   tagline: ['Developer', 'Discord Enthusiast', 'Digital Creator'],
   bio: 'Short bio about you. Replace this text with your own.',
   status: 'Online',
