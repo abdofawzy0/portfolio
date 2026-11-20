@@ -1,0 +1,15 @@
+@tailwind base; @tailwind components; @tailwind utilities;
+:root { --c1: #8b5cf6; --c2: #3b82f6; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #05050a; color: #e5e7eb; font-family: 'Space Grotesk', system-ui, sans-serif; overflow-x: hidden; }
+::selection { background: color-mix(in srgb, var(--c1) 50%, transparent); }
+@layer components {
+  .glass { background: rgba(255,255,255,.04); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,.08); }
+  .glow { box-shadow: 0 0 30px color-mix(in srgb, var(--c1) 35%, transparent); }
+  .grad-text { background: linear-gradient(90deg, var(--c1), var(--c2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .btn { @apply inline-flex items-center gap-2 rounded-xl px-5 py-3 font-semibold transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-c1; }
+  .btn-main { @apply text-white hover:-translate-y-0.5; background: linear-gradient(90deg, var(--c1), var(--c2)); }
+  .btn-main:hover { box-shadow: 0 0 28px color-mix(in srgb, var(--c1) 55%, transparent); }
+  .btn-ghost { @apply glass hover:-translate-y-0.5 hover:border-c1; }
+}
+@media (prefers-reduced-motion: reduce) { * { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
